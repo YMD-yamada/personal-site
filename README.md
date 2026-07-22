@@ -1,26 +1,21 @@
-# personal-site（ストア申請用）
+# personal-site（ストア申請用・全アプリ共通）
 
-App Store / Google Play 提出に必要な **法務・サポートの最小サイト** です。
+Crossplatform App 専用ではありません。全アプリで同じ法務 URL を使います。
 
-個人のポートフォリオ（制作物の見やすさ用）とは **別** です。
+詳細: [docs/STORE_LEGAL.md](docs/STORE_LEGAL.md)
 
-| サイト | 用途 |
-|---|---|
-| https://ymd-portfolio-site.pages.dev/ | 自分用ポートフォリオ（テスト） |
-| このリポジトリ（Vercel） | ストア申請用 URL のみ |
+## 新アプリ追加
 
-## 載せるもの
+```bash
+# 既存アプリをハブに載せる
+npm run register-app -- --name "My App" --slug my-app
 
-- プライバシーポリシー / 利用規約 / 特商法 / サポート
-- 対象アプリへの短い入口（データ取扱い追記）
+# または Expo 新規作成 + 自動登録
+npm run create-app -- --name "My App" --slug my-app
+```
 
-## 載せないもの
-
-- 趣味・経歴・プロフィール詳細
-- SNS・制作ストーリー
+その後 `git push` → Vercel が公開。
 
 ## 本番
 
 https://personal-site-taupe-gamma.vercel.app
-
-編集は主に `src/config/site.ts`。

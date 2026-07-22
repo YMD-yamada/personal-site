@@ -20,8 +20,8 @@ export default function HomePage() {
         <h1 className={styles.brand}>{siteConfig.brandName}</h1>
         <p className={styles.lede}>{siteConfig.purpose}</p>
         <p className={styles.note}>
-          個人のポートフォリオとは別サイトです。App Store / Google Play
-          に登録する URL は以下を使ってください。
+          個人ポートフォリオとは別サイトです。プライバシー・利用規約・サポートの URL
+          は全アプリ共通。新アプリは一覧に追加するだけで、法務サイトの作り直しは不要です。
         </p>
       </section>
 
@@ -61,7 +61,11 @@ export default function HomePage() {
       <section className={styles.section}>
         <div className={styles.sectionHead}>
           <h2>対象アプリ</h2>
-          <p>各アプリ固有のデータ取扱い追記への入口です。</p>
+          <p>
+            いまは Crossplatform App が1件だけです。追加は{' '}
+            <code>npm run register-app</code> / <code>npm run create-app</code>{' '}
+            で自動反映されます。
+          </p>
         </div>
         <div className={styles.group}>
           {apps.map((app) => (

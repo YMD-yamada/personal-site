@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "crossplatform-app",
+    "name": "Crossplatform App",
+    "summary": "Android / iOS / Web 向けアプリ",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "status": "development",
+    "dataCollected": [
+      "アカウント登録時のメールアドレス（任意ログイン時）",
+      "クラッシュログ・利用状況（分析ツールを有効にした場合）"
+    ]
+  }
+]

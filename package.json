@@ -8,7 +8,8 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "create-app": "node tools/create-app.mjs"
+    "create-app": "node tools/create-app.mjs",
+    "register-app": "node tools/register-app.mjs"
   },
   "dependencies": {
     "next": "16.2.10",
