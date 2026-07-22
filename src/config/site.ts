@@ -12,7 +12,7 @@ export const siteConfig = {
   address: '請求があった場合に遅滞なく開示します',
   supportEmail: 'ymd.hude@gmail.com',
   /** 本番の公開URL（末尾スラッシュなし） */
-  publicBaseUrl: 'https://ymd-portfolio-site.pages.dev',
+  publicBaseUrl: 'https://personal-site-taupe-gamma.vercel.app',
   /** 参考にしている既存ポートフォリオ（同系統のトーン） */
   referencePortfolioUrl: 'https://ymd-portfolio-site.pages.dev',
   updatedAt: '2026-07-21',
