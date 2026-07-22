@@ -26,6 +26,7 @@ const name = arg('--name');
 const slug = arg('--slug', name);
 const stack = arg('--stack', 'expo');
 const summary = arg('--summary', 'Android / iOS / Web 向けアプリ');
+const portfolioUrl = arg('--url', '');
 const bundleId = arg(
   '--bundle-id',
   `com.ymd.${(slug || 'app').replace(/-/g, '')}`,
@@ -115,7 +116,7 @@ Keep EXPO_PUBLIC_BILLING_MODE=none until monetization is decided.
 }
 
 function registerApp() {
-  const cmd = [
+  const parts = [
     'node',
     JSON.stringify(path.join(root, 'tools', 'register-app.mjs')),
     '--name',
@@ -124,6 +125,9 @@ function registerApp() {
     JSON.stringify(slug),
     '--summary',
     JSON.stringify(summary),
-  ].join(' ');
-  execSync(cmd, { stdio: 'inherit', shell: true, cwd: root });
+  ];
+  if (portfolioUrl) {
+    parts.push('--url', JSON.stringify(portfolioUrl));
+  }
+  execSync(parts.join(' '), { stdio: 'inherit', shell: true, cwd: root });
 }

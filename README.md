@@ -4,17 +4,26 @@ Crossplatform App 専用ではありません。全アプリで同じ法務 URL 
 
 詳細: [docs/STORE_LEGAL.md](docs/STORE_LEGAL.md)
 
-## 新アプリ追加
+## 2サイトの役割
+
+| サイト | 用途 | 追加コマンド |
+|---|---|---|
+| このサイト (Vercel) | ストア申請用法務 | `npm run register-app -- --name X --slug x` |
+| ymd-portfolio (Pages) | Web公開の制作物一覧 | 下の `--url` 付き、または portfolio 側の register-app |
+
+両方に載せる（Web公開 + ストア準備）:
 
 ```bash
-# 既存アプリをハブに載せる
-npm run register-app -- --name "My App" --slug my-app
-
-# または Expo 新規作成 + 自動登録
-npm run create-app -- --name "My App" --slug my-app
+npm run register-app -- --name "My App" --slug my-app --url "https://my-app.vercel.app"
 ```
 
-その後 `git push` → Vercel が公開。
+Expo 新規 + 登録:
+
+```bash
+npm run create-app -- --name "My App" --slug my-app --url "https://my-app.vercel.app"
+```
+
+その後、両方のリポジトリを `git push`。
 
 ## 本番
 
