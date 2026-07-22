@@ -65,6 +65,44 @@
   animation: rise-in 0.7s var(--ease) both;
 }
 
+.heroCompact {
+  display: grid;
+  gap: 0.75rem;
+  padding: 2rem 0 0.5rem;
+  animation: rise-in 0.6s var(--ease) both;
+}
+
+.heroCompact .brand {
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  animation: none;
+}
+
+.heroCompact .lede {
+  animation: none;
+  max-width: 40rem;
+}
+
+.note {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 40rem;
+}
+
+.urlList {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+}
+
+.urlList code {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  word-break: break-all;
+  color: var(--ink-soft);
+}
+
 .heroGlow {
   position: absolute;
   inset: 12% -10% auto;

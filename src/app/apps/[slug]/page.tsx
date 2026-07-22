@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { AppRow } from '@/components/AppRow';
 import { LegalArticle } from '@/components/LegalArticle';
 import { apps, legalUrls, statusLabel } from '@/config/site';
 import { privacyBody } from '@/content/legal';
@@ -31,7 +30,6 @@ export default async function AppDetailPage({
   if (!app) notFound();
 
   const urls = legalUrls();
-  const others = apps.filter((a) => a.slug !== app.slug);
 
   return (
     <div className={styles.page}>
@@ -46,14 +44,13 @@ export default async function AppDetailPage({
           <span className={styles.statusPill} data-status={app.status}>
             {statusLabel[app.status]}
           </span>
-          <span className={styles.metaMuted}>slug: {app.slug}</span>
         </div>
 
         <div className={styles.group}>
           <a className={styles.contactRow} href={urls.privacy}>
             <span>
-              <strong>共通プライバシーポリシー</strong>
-              <span className={styles.contactMeta}>全アプリ共通</span>
+              <strong>プライバシーポリシー</strong>
+              <span className={styles.contactMeta}>共通</span>
             </span>
             <span className={styles.chevron} aria-hidden>
               ›
@@ -62,7 +59,7 @@ export default async function AppDetailPage({
           <a className={styles.contactRow} href={urls.terms}>
             <span>
               <strong>利用規約</strong>
-              <span className={styles.contactMeta}>全アプリ共通</span>
+              <span className={styles.contactMeta}>共通</span>
             </span>
             <span className={styles.chevron} aria-hidden>
               ›
@@ -71,7 +68,7 @@ export default async function AppDetailPage({
           <a className={styles.contactRow} href={urls.support}>
             <span>
               <strong>サポート</strong>
-              <span className={styles.contactMeta}>問い合わせ・削除依頼</span>
+              <span className={styles.contactMeta}>問い合わせ</span>
             </span>
             <span className={styles.chevron} aria-hidden>
               ›
@@ -80,7 +77,7 @@ export default async function AppDetailPage({
         </div>
 
         <p className={styles.sectionFoot}>
-          <Link href="/apps/">← 制作物一覧</Link>
+          <Link href="/apps/">← アプリ一覧</Link>
         </p>
       </section>
 
@@ -88,19 +85,6 @@ export default async function AppDetailPage({
         title={`${app.name} のデータ取扱い追記`}
         markdown={privacyBody(app.slug)}
       />
-
-      {others.length > 0 ? (
-        <section className={styles.section}>
-          <div className={styles.sectionHead}>
-            <h2>その他の制作物</h2>
-          </div>
-          <div className={styles.group}>
-            {others.map((item) => (
-              <AppRow key={item.slug} app={item} />
-            ))}
-          </div>
-        </section>
-      ) : null}
     </div>
   );
 }

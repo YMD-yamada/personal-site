@@ -11,9 +11,9 @@ export function SiteHeader() {
           {siteConfig.brandName}
         </Link>
         <nav className={styles.nav} aria-label="メイン">
-          <a href="/#works">制作物</a>
-          <a href="/#profile">プロフィール</a>
-          <a href="/#contact">連絡</a>
+          <Link href="/legal/privacy/">プライバシー</Link>
+          <Link href="/legal/terms/">利用規約</Link>
+          <Link href="/support/">サポート</Link>
         </nav>
       </div>
     </header>
@@ -27,7 +27,7 @@ export function SiteFooter() {
         <div>
           <p className={styles.footerBrand}>{siteConfig.brandName}</p>
           <p className={styles.footerMeta}>
-            © {new Date().getFullYear()} {siteConfig.operatorName}
+            © {new Date().getFullYear()} {siteConfig.operatorName} · ストア申請用ページ
           </p>
         </div>
         <div className={styles.footerLinks}>

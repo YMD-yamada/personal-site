@@ -1,34 +1,20 @@
 # CURSOR_HANDOFF
 
-## 目的
+## 目的（重要）
 
-個人 HP + 複数アプリ共通法務の静的サイト（無料ホスティング想定）
+**ストア申請用の最小法務ハブ。**  
+ポートフォリオ https://ymd-portfolio-site.pages.dev/ とは別サイト。個人詳細は載せない。
 
-## 編集ポイント
+## 本番
 
-- `src/config/site.ts` — 運営者名・メール・公開URL・アプリ一覧
-- `docs/SAFE_REGISTRATION.md` — 有料登録の順番
-- `docs/GITHUB_SETUP.md` — GitHub 新規アカウント設定チェックリスト
-- `tools/create-app.mjs` — 新規 Expo アプリ生成
+https://personal-site-taupe-gamma.vercel.app  
+GitHub `main` push → Vercel 自動デプロイ
 
-## UI
+## 編集
 
-Mobbin 系のクリーンなポートフォリオ。Newsreader / Outfit、緑アクセント。
-ホーム: ブランド `ymd` ヒーロー → 制作物行リスト → プロフィール → 連絡。
-法務リンクはフッター中心。
-
-## デプロイ
-
-`npm run build` → `out/` を Vercel / Cloudflare Pages / GitHub Pages へ
-
-## ローカル確認
-
-```bash
-npm run dev
-# http://localhost:3000
-```
+- `src/config/site.ts` — 運営者名・メール・アプリ一覧のみ
 
 ## 更新
 
-- 2026-07-21: GitHub セットアップ文書、ポートフォリオ UI 仕上げ
-- 2026-07-20: サイト・法務・create-app・登録ガイドを追加
+- 2026-07-22: ポートフォリオ分離。申請用最小構成へ変更
+- 2026-07-21: Vercel 公開・UI

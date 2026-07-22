@@ -23,10 +23,10 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.brandName} — Portfolio`,
+    default: `${siteConfig.brandName} — Legal`,
     template: `%s · ${siteConfig.brandName}`,
   },
-  description: siteConfig.headline,
+  description: siteConfig.purpose,
   metadataBase: new URL(siteConfig.publicBaseUrl),
 };
 
