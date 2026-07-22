@@ -16,7 +16,16 @@ Crossplatform App 専用ではない（最初の登録が1件なだけ）。
 
 https://personal-site-taupe-gamma.vercel.app
 
+## 2サイト
+
+| サイト | 役割 |
+|---|---|
+| personal-site | ストア申請用法務（共通 URL） |
+| ymd-portfolio | Web 公開の制作物一覧 + Web 用法務ページ |
+
+Web 公開時は `--url` 付き register で両方へ自動追加可。
+
 ## 更新
 
-- 2026-07-22: apps.json + register-app。共通ハブであることを明記
-- 2026-07-22: ポートフォリオ分離
+- 2026-07-22: ポートフォリオ自動登録・Web 法務ページ連携
+- 2026-07-22: apps.json + register-app（ストア側）
