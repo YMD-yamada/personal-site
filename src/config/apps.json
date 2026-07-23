@@ -93,21 +93,5 @@
     "storeUrls": {
       "web": "https://juken-navi.onrender.com"
     }
-  },
-  {
-    "slug": "personal-site-1",
-    "name": "personal-site",
-    "summary": "personal-site の本番公開ビューをそのまま。グローバルに近い体感速度でチェックできるので、「ローカルと違うかも」を疑うときの検証にも向いています。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://personal-site-it5qlfw8r-ymdhude-4490s-projects.vercel.app"
-    }
   }
 ]
