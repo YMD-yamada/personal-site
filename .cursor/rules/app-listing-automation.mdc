@@ -7,8 +7,8 @@ alwaysApply: true
 
 The user must **never** be asked to run `register-app`, `create-app`, or manual listing commands for:
 
-- Store legal hub: `personal-site` (Vercel)
-- Portfolio works list: `ymd-portfolio` (Cloudflare Pages)
+- Store legal hub: `personal-site` (Vercel) — App Store / Play
+- Portfolio works list: `ymd-portfolio` (Cloudflare Pages) — Web-only, no store review
 
 ## When this applies
 
@@ -16,11 +16,17 @@ Creating a new app, deploying a Web app, preparing App Store / Play submission, 
 
 ## What you must do (you, the agent)
 
-1. Register store hub entry in `personal-site` (`tools/register-app.mjs` or `tools/publish-app-listing.mjs`).
-2. If a public Web URL exists, also register portfolio (`ymd-portfolio/scripts/register-app.mjs`) with `--url`.
-3. Commit and push the affected repo(s).
-4. Deploy or rely on CI (Vercel auto / Cloudflare Pages workflow). Trigger `gh workflow run` / `repository_dispatch` if the listing must refresh immediately.
-5. Confirm the live URLs yourself.
+### Web-only (portfolio)
+
+1. Run `ymd-portfolio/scripts/publish-app-listing.mjs --name "..." --url "https://..."`.
+2. Embed privacy/terms/support links in the app footer (`docs/WEB_PUBLISH.md`).
+3. Confirm https://ymd-portfolio-site.pages.dev/
+
+### Store submission (legal hub)
+
+1. Register store hub via `personal-site/tools/publish-app-listing.mjs` (or register-app).
+2. If a public Web URL exists, portfolio registration is included when `--url` is passed.
+3. Commit / push / deploy; confirm live URLs.
 
 ## Do not
 
