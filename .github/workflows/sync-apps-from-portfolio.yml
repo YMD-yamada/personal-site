@@ -1,0 +1,36 @@
+# Sync store hub app addenda from portfolio public web apps (agent/CI owned).
+# Does not require the user to run commands.
+
+name: Sync apps from portfolio
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 6 * * *"
+  repository_dispatch:
+    types: [sync-store-apps]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Sync from portfolio apps.json
+        run: node tools/sync-from-portfolio.mjs
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- src/config/apps.json; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "ymd-bot"
+          git config user.email "ymd.hude@gmail.com"
+          git add src/config/apps.json
+          git commit -m "chore: sync store hub apps from portfolio"
+          git push

@@ -1,0 +1,29 @@
+---
+description: App listing registration is agent-owned, never delegated to the user
+alwaysApply: true
+---
+
+# App listing automation (agent-owned)
+
+The user must **never** be asked to run `register-app`, `create-app`, or manual listing commands for:
+
+- Store legal hub: `personal-site` (Vercel)
+- Portfolio works list: `ymd-portfolio` (Cloudflare Pages)
+
+## When this applies
+
+Creating a new app, deploying a Web app, preparing App Store / Play submission, or adding something to the portfolio.
+
+## What you must do (you, the agent)
+
+1. Register store hub entry in `personal-site` (`tools/register-app.mjs` or `tools/publish-app-listing.mjs`).
+2. If a public Web URL exists, also register portfolio (`ymd-portfolio/scripts/register-app.mjs`) with `--url`.
+3. Commit and push the affected repo(s).
+4. Deploy or rely on CI (Vercel auto / Cloudflare Pages workflow). Trigger `gh workflow run` / `repository_dispatch` if the listing must refresh immediately.
+5. Confirm the live URLs yourself.
+
+## Do not
+
+- Tell the user “run this npm command to register”.
+- Leave registration as a follow-up for the user.
+- Confuse the portfolio (https://ymd-portfolio-site.pages.dev/) with the store legal hub (https://personal-site-taupe-gamma.vercel.app/).

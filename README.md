@@ -1,29 +1,13 @@
 # personal-site（ストア申請用・全アプリ共通）
 
-Crossplatform App 専用ではありません。全アプリで同じ法務 URL を使います。
+**掲載登録はエージェント / CI が行います。あなたが npm コマンドを打つ必要はありません。**
 
-詳細: [docs/STORE_LEGAL.md](docs/STORE_LEGAL.md)
+## 2サイト
 
-## 2サイトの役割
-
-| サイト | 用途 | 追加コマンド |
+| サイト | 用途 | どう増えるか |
 |---|---|---|
-| このサイト (Vercel) | ストア申請用法務 | `npm run register-app -- --name X --slug x` |
-| ymd-portfolio (Pages) | Web公開の制作物一覧 | 下の `--url` 付き、または portfolio 側の register-app |
-
-両方に載せる（Web公開 + ストア準備）:
-
-```bash
-npm run register-app -- --name "My App" --slug my-app --url "https://my-app.vercel.app"
-```
-
-Expo 新規 + 登録:
-
-```bash
-npm run create-app -- --name "My App" --slug my-app --url "https://my-app.vercel.app"
-```
-
-その後、両方のリポジトリを `git push`。
+| このサイト (Vercel) | ストア申請用法務 | エージェントが登録 / 日次で portfolio から同期 |
+| ymd-portfolio (Pages) | Web 制作物一覧 | ホスト同期（Vercel等）+ エージェント登録 + 日次 CI |
 
 ## 本番
 

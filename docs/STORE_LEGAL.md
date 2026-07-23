@@ -1,59 +1,18 @@
-# ストア申請用サイトについて
+# ストア申請用サイト / 掲載自動化
 
-## 結論
+## 誰が登録するか
 
-**問題ありません。Crossplatform App 専用ではありません。**
+**あなたではありません。Cursor エージェントまたは GitHub Actions です。**
 
-このサイトは全アプリ共通の法務ハブです。
+| 対象 | 仕組み |
+|---|---|
+| ストア法務ハブ | エージェントが `publish-app-listing` / CI が portfolio から日次同期 |
+| ポートフォリオ一覧 | CI が Vercel/GitHub/Netlify 等を同期 + エージェントが URL 付き登録 |
 
-| URL | 用途 | アプリごとの作り直し |
-|---|---|---|
-| `/legal/privacy/` | プライバシーポリシー | **不要（共通）** |
-| `/legal/terms/` | 利用規約 | **不要（共通）** |
-| `/legal/tokushoho/` | 特商法 | **不要（共通）** |
-| `/support/` | サポート | **不要（共通）** |
-| `/apps/<slug>/` | そのアプリ固有のデータ取扱い追記 | **追加のみ** |
+共通 privacy / terms / support URL はアプリが増えても変わりません。
 
-App Store Connect / Play Console では、どのアプリでもだいたい同じ privacy / terms / support URL を使います。  
-新しいアプリを出すたびに **新しい法務サイトは不要** です。必要なのは:
-
-1. ストア側に「新しいアプリ枠」を作る（Apple/Google のコンソール）
-2. このハブにアプリを1件登録する（下記コマンド）
-3. 同じ法務 URL を提出フォームに貼る
-
-ポートフォリオ（https://ymd-portfolio-site.pages.dev/）とは別です。
-
-## 新アプリを追加する（自動）
-
-### A. アプリごと新規作成する場合
-
-```bash
-cd C:\Users\cz7\Projects\personal-site
-npm run create-app -- --name "My App" --slug my-app
-```
-
-→ Expo プロジェクト作成 + `apps.json` へ自動登録
-
-### B. すでにあるアプリをハブに載せるだけ
-
-```bash
-cd C:\Users\cz7\Projects\personal-site
-npm run register-app -- --name "My App" --slug my-app
-```
-
-その後:
-
-```bash
-git add -A
-git commit -m "Register my-app on store legal hub"
-git push
-```
-
-Vercel が自動デプロイし、`/apps/my-app/` が増えます。
-
-## 本番の提出用 URL
+## 提出用 URL（共通）
 
 - https://personal-site-taupe-gamma.vercel.app/legal/privacy/
 - https://personal-site-taupe-gamma.vercel.app/legal/terms/
-- https://personal-site-taupe-gamma.vercel.app/legal/tokushoho/
 - https://personal-site-taupe-gamma.vercel.app/support/

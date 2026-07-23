@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * 新規アプリの足場作成 + ストア法務ハブへの自動登録。
+ * 新規アプリの足場作成 + 掲載登録（エージェント実行用。ユーザー操作不要）。
  *
- * Usage:
- *   npm run create-app -- --name "My App" --slug my-app
- *   npm run create-app -- --name "My App" --slug my-app --stack expo
+ * Usage (agent):
+ *   node tools/create-app.mjs --name "My App" --slug my-app
+ *   node tools/create-app.mjs --name "My App" --slug my-app --url "https://..."
  */
 import { execSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -43,24 +43,35 @@ if (fs.existsSync(target)) {
   process.exit(1);
 }
 
-const stacks = {
-  expo: createExpo,
-};
-
+const stacks = { expo: createExpo };
 if (!stacks[stack]) {
   console.error(`Unknown stack: ${stack}. Supported: ${Object.keys(stacks).join(', ')}`);
   process.exit(1);
 }
 
 await stacks[stack]();
-registerApp();
+publishListings();
 
 console.log(`\nDone: ${target}`);
-console.log('Store legal URLs (same for all apps):');
-console.log(`  ${LEGAL_BASE}/legal/privacy/`);
-console.log(`  ${LEGAL_BASE}/legal/terms/`);
-console.log(`  ${LEGAL_BASE}/support/`);
-console.log('Next: commit & push personal-site, then develop the app.');
+console.log('Listings are handled by the agent/CI — not by the user.');
+
+function publishListings() {
+  const parts = [
+    'node',
+    JSON.stringify(path.join(root, 'tools', 'publish-app-listing.mjs')),
+    '--name',
+    JSON.stringify(name),
+    '--slug',
+    JSON.stringify(slug),
+    '--summary',
+    JSON.stringify(summary),
+    '--skip-push',
+  ];
+  if (portfolioUrl) {
+    parts.push('--url', JSON.stringify(portfolioUrl));
+  }
+  execSync(parts.join(' '), { stdio: 'inherit', shell: true, cwd: root });
+}
 
 async function createExpo() {
   fs.mkdirSync(target, { recursive: true });
@@ -89,7 +100,6 @@ Bundle ID: ${bundleId}
 
 ## Store legal (shared hub)
 
-Do NOT create a new legal website per app.
 Reuse these URLs in App Store Connect / Play Console:
 
 - Privacy: ${LEGAL_BASE}/legal/privacy/
@@ -113,21 +123,4 @@ Keep EXPO_PUBLIC_BILLING_MODE=none until monetization is decided.
     json.expo.android = { ...(json.expo.android || {}), package: bundleId };
     fs.writeFileSync(appJson, JSON.stringify(json, null, 2));
   }
-}
-
-function registerApp() {
-  const parts = [
-    'node',
-    JSON.stringify(path.join(root, 'tools', 'register-app.mjs')),
-    '--name',
-    JSON.stringify(name),
-    '--slug',
-    JSON.stringify(slug),
-    '--summary',
-    JSON.stringify(summary),
-  ];
-  if (portfolioUrl) {
-    parts.push('--url', JSON.stringify(portfolioUrl));
-  }
-  execSync(parts.join(' '), { stdio: 'inherit', shell: true, cwd: root });
 }

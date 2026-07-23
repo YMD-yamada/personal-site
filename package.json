@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "eslint",
     "create-app": "node tools/create-app.mjs",
-    "register-app": "node tools/register-app.mjs"
+    "register-app": "node tools/register-app.mjs",
+    "publish-app-listing": "node tools/publish-app-listing.mjs",
+    "sync-from-portfolio": "node tools/sync-from-portfolio.mjs"
   },
   "dependencies": {
     "next": "16.2.10",

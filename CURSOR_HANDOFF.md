@@ -2,30 +2,16 @@
 
 ## 目的
 
-ストア申請用の **全アプリ共通** 法務ハブ。  
-ポートフォリオ https://ymd-portfolio-site.pages.dev/ とは別。  
-Crossplatform App 専用ではない（最初の登録が1件なだけ）。
+ストア申請用の全アプリ共通法務ハブ。ポートフォリオとは別。
 
-## アプリ追加（自動）
+## 自動化（ユーザー操作なし）
 
-- `npm run register-app -- --name "X" --slug x` → `src/config/apps.json`
-- `npm run create-app -- --name "X" --slug x` → Expo 作成 + 上記登録
-- push で `/apps/<slug>/` が増える。privacy/terms/support URL は不変。
+- **エージェント必須**: アプリ作成・Web公開時に `tools/publish-app-listing.mjs` を自分で実行し、commit / push / デプロイまで行う。
+- **CI**: `.github/workflows/sync-apps-from-portfolio.yml` が portfolio の公開 Web アプリを日次で store hub に同期。
+- **ポートフォリオ CI**: push / 日次で `sync-apps` → Cloudflare Pages。
+
+ユーザーに `npm run register-app` を実行させない。
 
 ## 本番
 
 https://personal-site-taupe-gamma.vercel.app
-
-## 2サイト
-
-| サイト | 役割 |
-|---|---|
-| personal-site | ストア申請用法務（共通 URL） |
-| ymd-portfolio | Web 公開の制作物一覧 + Web 用法務ページ |
-
-Web 公開時は `--url` 付き register で両方へ自動追加可。
-
-## 更新
-
-- 2026-07-22: ポートフォリオ自動登録・Web 法務ページ連携
-- 2026-07-22: apps.json + register-app（ストア側）
