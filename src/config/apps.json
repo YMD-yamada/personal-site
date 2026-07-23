@@ -31,7 +31,7 @@
     }
   },
   {
-    "slug": "bucolic-biscuit-c637b0-netlify-app",
+    "slug": "bucolic-biscuit-c637b0",
     "name": "気分で旅行先",
     "summary": "「結局どこへ行けば気分が晴れる？」をひとつのボタンで候補へ変える、旅行のアイスブレイク。細かい日程より先に行きたい方向だけ決めたいとき向け。",
     "platforms": [
@@ -47,7 +47,7 @@
     }
   },
   {
-    "slug": "kids-mini-games-vercel-app",
+    "slug": "kids-mini-games",
     "name": "みんなのミニゲーム",
     "summary": "未就学〜低学年向けのミニゲーム集。えモードと読み上げで、文字が読めなくても遊べます。神経衰弱・数え・ひらがな・間違い探しなど。",
     "platforms": [
@@ -76,102 +76,6 @@
     ],
     "storeUrls": {
       "web": "https://fanza-nine.vercel.app"
-    }
-  },
-  {
-    "slug": "personal-site",
-    "name": "personal-site",
-    "summary": "personal-site の本番公開ビューをそのまま。グローバルに近い体感速度でチェックできるので、「ローカルと違うかも」を疑うときの検証にも向いています。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://personal-site-a2004pfb5-ymdhude-4490s-projects.vercel.app"
-    }
-  },
-  {
-    "slug": "point-palette-legal",
-    "name": "point-palette-legal",
-    "summary": "point-palette-legal の本番公開ビューをそのまま。グローバルに近い体感速度でチェックできるので、「ローカルと違うかも」を疑うときの検証にも向いています。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://point-palette-legal-2033i7189-ymdhude-4490s-projects.vercel.app"
-    }
-  },
-  {
-    "slug": "sns-crosspost",
-    "name": "sns-crosspost",
-    "summary": "sns-crosspost の本番公開ビューをそのまま。グローバルに近い体感速度でチェックできるので、「ローカルと違うかも」を疑うときの検証にも向いています。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://sns-crosspost-a5lmivw7c-ymdhude-4490s-projects.vercel.app"
-    }
-  },
-  {
-    "slug": "kids-mini-games",
-    "name": "kids-mini-games",
-    "summary": "kids-mini-games の本番公開ビューをそのまま。グローバルに近い体感速度でチェックできるので、「ローカルと違うかも」を疑うときの検証にも向いています。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://kids-mini-games-ixo3tcc57-ymdhude-4490s-projects.vercel.app"
-    }
-  },
-  {
-    "slug": "fanza-9",
-    "name": "fanza",
-    "summary": "fanza の本番公開ビューをそのまま。グローバルに近い体感速度でチェックできるので、「ローカルと違うかも」を疑うときの検証にも向いています。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://fanza-h6aohk8zb-ymdhude-4490s-projects.vercel.app"
-    }
-  },
-  {
-    "slug": "fanza-sample-swipe",
-    "name": "fanza-sample-swipe",
-    "summary": "fanza-sample-swipe の本番公開ビューをそのまま。グローバルに近い体感速度でチェックできるので、「ローカルと違うかも」を疑うときの検証にも向いています。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://fanza-sample-swipe-e8w401n7v-ymdhude-4490s-projects.vercel.app"
     }
   },
   {

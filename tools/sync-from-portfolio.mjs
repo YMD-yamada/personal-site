@@ -14,14 +14,33 @@ const PORTFOLIO_APPS_URL =
   process.env.PORTFOLIO_APPS_URL ||
   'https://ymd-portfolio-site.pages.dev/data/apps.json';
 
+const SKIP_HOST_PARTS = [
+  'personal-site-taupe-gamma',
+  'ymd-portfolio-site.pages.dev',
+  'github.io/ymd-portfolio',
+];
+
+function shouldSkipUrl(url) {
+  const u = String(url || '').toLowerCase();
+  return SKIP_HOST_PARTS.some((p) => u.includes(p));
+}
+
+function hostKey(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '').toLowerCase();
+  } catch {
+    return String(url || '').toLowerCase();
+  }
+}
+
 function slugify(name, url) {
   const fromName = String(name || '')
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
-  if (fromName) return fromName.slice(0, 48);
+  if (fromName && /[a-z0-9]/.test(fromName)) return fromName.slice(0, 48);
   try {
-    return new URL(url).hostname.replace(/\./g, '-').slice(0, 48);
+    return new URL(url).hostname.split('.')[0].replace(/[^a-z0-9-]/g, '').slice(0, 48);
   } catch {
     return `app-${Date.now()}`;
   }
@@ -37,39 +56,44 @@ const items = Array.isArray(portfolio.items) ? portfolio.items : [];
 
 const hub = JSON.parse(fs.readFileSync(appsPath, 'utf8'));
 const bySlug = new Map(hub.map((a) => [a.slug, a]));
-const byWeb = new Map(
-  hub
-    .filter((a) => a.storeUrls?.web)
-    .map((a) => [String(a.storeUrls.web).replace(/\/$/, ''), a]),
-);
+const byHost = new Map();
+for (const a of hub) {
+  const web = a.storeUrls?.web;
+  if (web) byHost.set(hostKey(web), a);
+}
 
 let added = 0;
 for (const it of items) {
   if (!it || it.visibility === 'private' || it.visibility === 'limited') continue;
   if (!it.url || !it.name) continue;
-  if (String(it.url).includes('personal-site-taupe-gamma')) continue;
+  if (shouldSkipUrl(it.url)) continue;
+  // Prefer stable public apps; skip vague preview aliases when a cleaner URL exists later via sync
+  if (String(it.url).includes('-ymdhude-4490s-projects.vercel.app')) continue;
 
-  const web = String(it.url).replace(/\/$/, '');
-  if (byWeb.has(web)) continue;
+  const host = hostKey(it.url);
+  if (byHost.has(host)) continue;
 
-  let slug = slugify(it.name, web);
-  if (bySlug.has(slug)) slug = `${slug}-${added + 1}`;
+  let slug = slugify(it.name, it.url);
+  let n = 1;
+  while (bySlug.has(slug)) {
+    slug = `${slugify(it.name, it.url)}-${n++}`;
+  }
 
   const entry = {
     slug,
     name: it.name,
-    summary: it.description || 'Web 公開アプリ',
+    summary: (it.description || 'Web 公開アプリ').slice(0, 120),
     platforms: ['web'],
     status: it.category === '公開中' ? 'released' : 'development',
     dataCollected: [
       'アクセスログ（ホスティング事業者が処理する場合があります）',
       '各アプリが収集する入力・設定情報（該当する場合）',
     ],
-    storeUrls: { web },
+    storeUrls: { web: String(it.url).replace(/\/$/, '') },
   };
   hub.push(entry);
   bySlug.set(slug, entry);
-  byWeb.set(web, entry);
+  byHost.set(host, entry);
   added += 1;
   console.log(`+ ${entry.name} (${slug})`);
 }
