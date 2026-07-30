@@ -93,5 +93,21 @@
     "storeUrls": {
       "web": "https://juken-navi.onrender.com"
     }
+  },
+  {
+    "slug": "kotoba-zukan",
+    "name": "ちいさなことばずかん",
+    "summary": "子ども向けオリジナルことば図鑑。タッチで日本語・英語の読み上げ、クイズ、オフラインPWA。アカウント不要・個人情報のサーバー送信なし。",
+    "platforms": [
+      "web"
+    ],
+    "status": "released",
+    "dataCollected": [
+      "端末内のおきにいり・進捗・声の設定（localStorageのみ。サーバーへ送信しません）",
+      "アクセスログ（ホスティング事業者が処理する場合があります）"
+    ],
+    "storeUrls": {
+      "web": "https://kotoba-zukan.vercel.app"
+    }
   }
 ]
