@@ -145,14 +145,35 @@
     "name": "ShortSync Studio",
     "summary": "マーケター向けマルチSNSクロスポスト。パスキー認証。キャンペーン下書き〜実行。",
     "platforms": [
-      "ios",
-      "android",
       "web"
+    ],
+    "status": "released",
+    "dataCollected": [
+      "アカウント識別子（パスキー／認証用。メールは任意連携時）",
+      "接続したSNSのOAuthトークン（暗号化保存）",
+      "投稿・キャンペーン下書きと実行ログ",
+      "アクセスログ（ホスティング事業者が処理する場合があります）"
+    ],
+    "storeUrls": {
+      "web": "https://sns-crosspost.vercel.app"
+    }
+  },
+  {
+    "slug": "point-palette",
+    "name": "ポイントパレット",
+    "summary": "日本向けポイントカード管理（Expo）。法務ページ公開済み。ストア準備中。",
+    "platforms": [
+      "ios",
+      "android"
     ],
     "status": "development",
     "dataCollected": [
-      "アカウント登録時のメールアドレス（ログインを有効にした場合）",
-      "クラッシュログ・利用状況（分析ツールを有効にした場合）"
-    ]
+      "アカウント登録時のメールアドレス（Supabase Auth）",
+      "ポイントカード情報（ユーザーが登録した内容）",
+      "アクセスログ（ホスティング事業者が処理する場合があります）"
+    ],
+    "storeUrls": {
+      "web": "https://point-palette-legal.vercel.app/privacy"
+    }
   }
 ]
