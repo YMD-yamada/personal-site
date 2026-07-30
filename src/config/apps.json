@@ -97,17 +97,32 @@
   {
     "slug": "kotoba-zukan",
     "name": "ちいさなことばずかん",
-    "summary": "子ども向けオリジナルことば図鑑。ひらがな・カタカナ・数字・ABCの読み書き練習、タッチ読み上げ、クイズや遊び。Web/PWA/Windows対応。個人情報のサーバー送信なし。",
+    "summary": "タッチでよめる・あそべる子ども向けことば図鑑。もじ練習・クイズ・あそび。Web/PWA/Windows。アカウント不要・サーバーへ個人情報を送りません。",
     "platforms": [
       "web"
     ],
     "status": "released",
     "dataCollected": [
-      "端末内のおきにいり・進捗・声の設定（localStorageのみ。サーバーへ送信しません）",
-      "アクセスログ（ホスティング事業者が処理する場合があります）"
+      "端末内のお気に入り・進捗・声の設定（localStorageのみ。サーバーへ送信しません）",
+      "アクセスログ（ホスティング事業者が自動収集する場合があります）"
     ],
     "storeUrls": {
       "web": "https://kotoba-zukan.vercel.app"
     }
+  },
+  {
+    "slug": "honjo-outing-map",
+    "name": "本庄おでかけマップ",
+    "summary": "本庄市の子育て世帯向け。遊び・食事・イベントを地図から探し、おすすめとルートでマンネリを少し外すWebアプリ。",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "status": "development",
+    "dataCollected": [
+      "アカウント登録時のメールアドレス（ログインを有効にした場合）",
+      "クラッシュログ・利用状況（分析ツールを有効にした場合）"
+    ]
   }
 ]
