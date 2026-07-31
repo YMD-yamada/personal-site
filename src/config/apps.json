@@ -175,5 +175,21 @@
     "storeUrls": {
       "web": "https://point-palette-legal.vercel.app/privacy"
     }
+  },
+  {
+    "slug": "honjo-outing-map-1",
+    "name": "本庄おでかけマップ",
+    "summary": "本庄市の子育て世帯向け。遊び・食事・イベントを地図から探し、おすすめとルートでマンネリを少し外すWebアプリ。",
+    "platforms": [
+      "web"
+    ],
+    "status": "released",
+    "dataCollected": [
+      "アクセスログ（ホスティング事業者が処理する場合があります）",
+      "各アプリが収集する入力・設定情報（該当する場合）"
+    ],
+    "storeUrls": {
+      "web": "https://honjo-outing-map.vercel.app"
+    }
   }
 ]
