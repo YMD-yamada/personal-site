@@ -191,5 +191,18 @@
     "storeUrls": {
       "web": "https://honjo-outing-map.vercel.app"
     }
+  },
+  {
+    "slug": "kuroshiro",
+    "name": "黒白侵攻",
+    "summary": "囲碁と将棋の非対称対戦（黒白侵攻 / Kuroshiro）。手渡し・CPU・オンライン対応。",
+    "platforms": [
+      "web"
+    ],
+    "status": "development",
+    "dataCollected": [
+      "オンライン対戦時の一時的なルーム参加情報（サーバーに保存、対局終了で破棄）",
+      "アクセスログ（ホスティング事業者が処理する場合があります）"
+    ]
   }
 ]
