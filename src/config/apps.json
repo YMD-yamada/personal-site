@@ -199,10 +199,13 @@
     "platforms": [
       "web"
     ],
-    "status": "development",
+    "status": "released",
     "dataCollected": [
       "オンライン対戦時の一時的なルーム参加情報（サーバーに保存、対局終了で破棄）",
       "アクセスログ（ホスティング事業者が処理する場合があります）"
-    ]
+    ],
+    "storeUrls": {
+      "web": "https://kuroshiro-omega.vercel.app"
+    }
   }
 ]
