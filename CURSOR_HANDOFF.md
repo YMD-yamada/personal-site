@@ -24,3 +24,6 @@
 
 - Store hub: https://personal-site-taupe-gamma.vercel.app
 - Portfolio: https://ymd-portfolio-site.pages.dev/
+- 出先Todo（暗号化）: https://personal-site-taupe-gamma.vercel.app/go.html
+  - PIN: NAS `33_Tasks/.mobile-board-pin`（git 外）
+  - 再公開: `node ../work-ops-hub/scripts/publish-mobile-board.mjs --ship`
