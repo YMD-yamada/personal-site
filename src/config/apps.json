@@ -1,222 +1,27 @@
 [
   {
-    "slug": "crossplatform-app",
-    "name": "Crossplatform App",
-    "summary": "Android / iOS / Web 向けアプリ",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "status": "development",
-    "dataCollected": [
-      "アカウント登録時のメールアドレス（任意ログイン時）",
-      "クラッシュログ・利用状況（分析ツールを有効にした場合）"
-    ]
-  },
-  {
-    "slug": "daily-lucky",
-    "name": "Daily Lucky",
-    "summary": "今日の運試しから、その場で関連のお楽しみまでつながるひとつの小さな体験です。環境準備なくサッと回せますし、結果を眺めながら次のひとことを探すのにも向いています。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://daily-lucky.onrender.com"
-    }
-  },
-  {
-    "slug": "bucolic-biscuit-c637b0",
-    "name": "気分で旅行先",
-    "summary": "「結局どこへ行けば気分が晴れる？」をひとつのボタンで候補へ変える、旅行のアイスブレイク。細かい日程より先に行きたい方向だけ決めたいとき向け。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://bucolic-biscuit-c637b0.netlify.app"
-    }
-  },
-  {
-    "slug": "kids-mini-games",
-    "name": "みんなのミニゲーム",
-    "summary": "未就学〜低学年向けのミニゲーム集。えモードと読み上げで、文字が読めなくても遊べます。神経衰弱・数え・ひらがな・間違い探しなど。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://kids-mini-games.vercel.app"
-    }
-  },
-  {
-    "slug": "fanza",
-    "name": "Fanza",
-    "summary": "成人向け题材の試作UI。作品カタログのめくり心地や操作感を、落ち着いた画面で検証するプロトタイプです。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://fanza-nine.vercel.app"
-    }
-  },
-  {
-    "slug": "juken-navi",
-    "name": "juken-navi",
-    "summary": "juken-navi の常時稼働デプロイ。ビルド済みの状態をURLから直接たどれるので、デモや共有に向けた入口として使いやすいです。",
-    "platforms": [
-      "web"
-    ],
-    "status": "development",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://juken-navi.onrender.com"
-    }
-  },
-  {
-    "slug": "kotoba-zukan",
-    "name": "ちいさなことばずかん",
-    "summary": "タッチでよめる・あそべる子ども向けことば図鑑。もじ練習・クイズ・あそび。Web/PWA/Windows。アカウント不要・サーバーへ個人情報を送りません。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "端末内のお気に入り・進捗・声の設定（localStorageのみ。サーバーへ送信しません）",
-      "アクセスログ（ホスティング事業者が自動収集する場合があります）"
-    ],
-    "storeUrls": {
-      "web": "https://kotoba-zukan.vercel.app"
-    }
-  },
-  {
-    "slug": "honjo-outing-map",
-    "name": "本庄おでかけマップ",
-    "summary": "本庄市の子育て世帯向け。遊び・食事・イベントを地図から探し、おすすめとルートでマンネリを少し外すWebアプリ。",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "status": "development",
-    "dataCollected": [
-      "アカウント登録時のメールアドレス（ログインを有効にした場合）",
-      "クラッシュログ・利用状況（分析ツールを有効にした場合）"
-    ]
-  },
-  {
-    "slug": "pyon-asobi-jima",
-    "name": "ぴょんのあそびじま",
-    "summary": "からだとあたまをつかうスキル島マップ。反応・きおく・かず・いろかたち・おと。個人情報なし・ログインなし。",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "status": "development",
-    "dataCollected": [
-      "アカウント登録時のメールアドレス（ログインを有効にした場合）",
-      "クラッシュログ・利用状況（分析ツールを有効にした場合）"
-    ]
-  },
-  {
-    "slug": "shortsync-studio",
-    "name": "ShortSync Studio",
-    "summary": "マーケター向けマルチSNSクロスポスト。パスキー認証。キャンペーン下書き〜実行。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アカウント識別子（パスキー／認証用。メールは任意連携時）",
-      "接続したSNSのOAuthトークン（暗号化保存）",
-      "投稿・キャンペーン下書きと実行ログ",
-      "アクセスログ（ホスティング事業者が処理する場合があります）"
-    ],
-    "storeUrls": {
-      "web": "https://sns-crosspost.vercel.app"
-    }
-  },
-  {
     "slug": "point-palette",
     "name": "ポイントパレット",
-    "summary": "日本向けポイントカード管理（Expo）。法務ページ公開済み。ストア準備中。",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "summary": "日本のポイントカード／バーコードをひとつにまとめる家族共有アプリ。オフライン提示・日本語UI。広告なし。App Store / Google Play 申請用。",
+    "platforms": ["ios", "android"],
     "status": "development",
     "dataCollected": [
       "アカウント登録時のメールアドレス（Supabase Auth）",
-      "ポイントカード情報（ユーザーが登録した内容）",
-      "アクセスログ（ホスティング事業者が処理する場合があります）"
+      "表示名",
+      "ポイントカード番号・バーコード（世帯内で同期）",
+      "カード写真（任意）",
+      "位置情報（任意・近い店舗カードの並び替え用）",
+      "アクセスログ（Webプレビューのホスティング事業者が処理する場合があります）"
     ],
     "storeUrls": {
-      "web": "https://point-palette-legal.vercel.app/privacy"
-    }
-  },
-  {
-    "slug": "honjo-outing-map-1",
-    "name": "本庄おでかけマップ",
-    "summary": "本庄市の子育て世帯向け。遊び・食事・イベントを地図から探し、おすすめとルートでマンネリを少し外すWebアプリ。",
-    "platforms": [
-      "web"
-    ],
-    "status": "released",
-    "dataCollected": [
-      "アクセスログ（ホスティング事業者が処理する場合があります）",
-      "各アプリが収集する入力・設定情報（該当する場合）"
-    ],
-    "storeUrls": {
-      "web": "https://honjo-outing-map.vercel.app"
-    }
-  },
-  {
-    "slug": "kuroshiro",
-    "name": "黒白侵攻",
-    "summary": "囲碁と将棋の非対称対戦（黒白侵攻 / Kuroshiro）。手渡し・CPU・オンライン対応。",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "status": "development",
-    "dataCollected": [
-      "オンライン対戦時の一時的なルーム参加情報（サーバーに保存、対局終了で破棄）",
-      "アクセスログ（ホスティング事業者が処理する場合があります）"
-    ],
-    "storeUrls": {
-      "web": "https://kuroshiro-omega.vercel.app"
+      "web": "https://point-palette-legal.vercel.app/demo"
     }
   },
   {
     "slug": "timeboard",
     "name": "Timeboard",
-    "summary": "Windows のアプリ使用時間を端末内だけで記録。未使用アプリの削除検討を助けるデジタルウェルビーイング。Apple Screen Time とは無関係。",
-    "platforms": [
-      "windows"
-    ],
+    "summary": "Windows のアプリ使用時間を端末内だけで記録。未使用アプリの削除検討を助けるデジタルウェルビーイング。Apple Screen Time とは無関係。Microsoft Store 申請用。",
+    "platforms": ["windows"],
     "status": "released",
     "dataCollected": [
       "前面ウィンドウのプロセス名・実行ファイルパス・ウィンドウタイトル（使用時間の計測。端末内のみ。サーバーへ送信しません）",
@@ -230,40 +35,14 @@
     }
   },
   {
-    "slug": "okaeri-renraku",
-    "name": "おかえり連絡",
-    "summary": "家族への帰宅・夕飯連絡をボタンで。お試しあり。各自の公式LINEで動かす（作者OA非共有）。",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "slug": "crossplatform-app",
+    "name": "Crossplatform App",
+    "summary": "Android / iOS / Web 向けの共通公開スターター。ストア申請の法務URL検証用テンプレート。一般向け作品一覧には載せません。",
+    "platforms": ["ios", "android", "web"],
     "status": "development",
     "dataCollected": [
-      "アカウント登録時のメールアドレス（ログインを有効にした場合）",
+      "アカウント登録時のメールアドレス（任意ログイン時）",
       "クラッシュログ・利用状況（分析ツールを有効にした場合）"
     ]
-  },
-  {
-    "slug": "point-palette",
-    "name": "ポイントパレット",
-    "summary": "日本のポイントカード／バーコードをひとつにまとめる家族共有アプリ。オフライン提示・日本語UI。広告なし。",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "status": "development",
-    "dataCollected": [
-      "アカウント登録時のメールアドレス",
-      "表示名",
-      "ポイントカード番号・バーコード（世帯内で同期）",
-      "カード写真（任意）",
-      "位置情報（任意・近い店舗カードの並び替え用）",
-      "アクセスログ（Webプレビューのホスティング事業者が処理する場合があります）"
-    ],
-    "storeUrls": {
-      "web": "https://point-palette-legal.vercel.app/demo"
-    }
   }
 ]

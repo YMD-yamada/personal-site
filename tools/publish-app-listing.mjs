@@ -3,9 +3,11 @@
  * Agent-owned: register listings and publish without asking the user to run commands.
  *
  * Usage (agent):
- *   node tools/publish-app-listing.mjs --name "My App" --slug my-app --url "https://..."
- *   node tools/publish-app-listing.mjs --name "My App" --slug my-app
+ *   # Web 公開のみ → ポートフォリオ
  *   node tools/publish-app-listing.mjs --name "My App" --url "https://..." --portfolio-only
+ *
+ *   # ストア申請（App Store / Play / MS Store）→ 法務ハブ + ポートフォリオ（呼応）
+ *   node tools/publish-app-listing.mjs --store --name "My App" --slug my-app --url "https://..."
  */
 import { execSync } from 'node:child_process';
 import path from 'node:path';
@@ -28,24 +30,31 @@ function sh(cmd, cwd = root) {
 const name = arg('--name');
 const slug = arg('--slug', '');
 const url = arg('--url', '');
-const summary = arg('--summary', 'Android / iOS / Web 向けアプリ');
-const portfolioOnly = process.argv.includes('--portfolio-only');
+const summary = arg('--summary', '');
+const store = process.argv.includes('--store');
+const portfolioOnly = process.argv.includes('--portfolio-only') || (!store && Boolean(url));
 const skipPush = process.argv.includes('--skip-push');
+const platforms = arg('--platforms', store ? 'ios,android' : 'web');
+const status = arg('--status', store ? 'development' : 'released');
 
 if (!name) {
   console.error('Required: --name');
   process.exit(1);
 }
-if (!portfolioOnly && !slug) {
-  console.error('Required: --slug (unless --portfolio-only)');
+if (store && !slug) {
+  console.error('Required: --slug with --store');
   process.exit(1);
 }
 if (portfolioOnly && !url) {
-  console.error('Required: --url with --portfolio-only');
+  console.error('Required: --url for portfolio listing');
+  process.exit(1);
+}
+if (!store && !url) {
+  console.error('Use --store (hub) and/or --url (portfolio)');
   process.exit(1);
 }
 
-if (!portfolioOnly) {
+if (store) {
   const parts = [
     'node',
     JSON.stringify(path.join(root, 'tools', 'register-app.mjs')),
@@ -54,9 +63,12 @@ if (!portfolioOnly) {
     '--slug',
     JSON.stringify(slug),
     '--summary',
-    JSON.stringify(summary),
+    JSON.stringify(summary || 'ストア申請対象アプリ'),
+    '--platforms',
+    JSON.stringify(platforms),
+    '--status',
+    JSON.stringify(status),
   ];
-  // register-app also hits portfolio when --url is set; avoid double-call by not passing url here
   sh(parts.join(' '));
 }
 
@@ -75,7 +87,7 @@ if (url) {
       '--url',
       JSON.stringify(url),
       '--description',
-      JSON.stringify(summary),
+      JSON.stringify(summary || `${name} の公開ページです。`),
     ].join(' '),
     portfolio,
   );
@@ -99,7 +111,7 @@ if (url) {
   }
 }
 
-if (!portfolioOnly && !skipPush) {
+if (store && !skipPush) {
   sh('git add -A', root);
   try {
     sh(

@@ -6,13 +6,19 @@
 
 | 対象 | 仕組み |
 |---|---|
-| ストア法務ハブ | エージェントが `publish-app-listing` / CI が portfolio から日次同期 |
-| ポートフォリオ一覧 | CI が Vercel/GitHub/Netlify 等を同期 + エージェントが URL 付き登録 |
+| このサイト（ストア法務ハブ） | ストア提出アプリだけ。エージェントが `publish-app-listing --store` |
+| ポートフォリオ一覧 | Web 制作物すべて。エージェントが `--url` / `--portfolio-only` |
 
-共通 privacy / terms / support URL はアプリが増えても変わりません。
+Web だけの作品をこのハブに日次同期しない。既存ストアアプリの説明だけポートフォリオから更新する。
 
 ## 提出用 URL（共通）
 
 - https://personal-site-taupe-gamma.vercel.app/legal/privacy/
 - https://personal-site-taupe-gamma.vercel.app/legal/terms/
 - https://personal-site-taupe-gamma.vercel.app/support/
+
+アプリ別追記: `/apps/<slug>/`
+
+## 公開入口（SNS・人向け）
+
+- https://ymd-portfolio-site.pages.dev/

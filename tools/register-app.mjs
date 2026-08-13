@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 /**
  * ストア申請用ハブ（personal-site）にアプリを登録する。
- * --url を付けると、ポートフォリオ（ymd-portfolio）の制作物一覧にも自動追加する。
+ * Web だけの作品は登録しない。ストア提出（App Store / Play / MS Store）が必要なときだけ。
+ * --url を付けると、ポートフォリオ（ymd-portfolio）の制作物一覧にも追加して呼応させる。
  *
  * Usage:
- *   npm run register-app -- --name "My App" --slug my-app
+ *   npm run register-app -- --name "My App" --slug my-app --platforms ios,android
  *   npm run register-app -- --name "My App" --slug my-app --url "https://my-app.vercel.app"
  */
 import { execSync } from 'node:child_process';

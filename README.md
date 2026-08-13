@@ -1,14 +1,12 @@
-# personal-site（ストア申請用・全アプリ共通）
+# personal-site（ストア申請用・法務ハブ）
 
 **掲載登録はエージェント / CI が行います。あなたが npm コマンドを打つ必要はありません。**
 
 ## 2サイト
 
-| サイト | 用途 | どう増えるか |
+| サイト | URL | 用途 |
 |---|---|---|
-| このサイト (Vercel) | ストア申請用法務 | エージェントが登録 / 日次で portfolio から同期 |
-| ymd-portfolio (Pages) | Web 制作物一覧 | ホスト同期（Vercel等）+ エージェント登録 + 日次 CI |
+| このサイト (Vercel) | https://personal-site-taupe-gamma.vercel.app | App Store / Play / Microsoft Store のポリシーURL |
+| ymd-portfolio (Pages) | https://ymd-portfolio-site.pages.dev/ | Web 制作物一覧・SNS の入口 |
 
-## 本番
-
-https://personal-site-taupe-gamma.vercel.app
+ストア提出しない Web 作品はここには載せない。

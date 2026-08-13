@@ -20,9 +20,44 @@ export default function HomePage() {
         <h1 className={styles.brand}>{siteConfig.brandName}</h1>
         <p className={styles.lede}>{siteConfig.purpose}</p>
         <p className={styles.note}>
-          個人ポートフォリオとは別サイトです。プライバシー・利用規約・サポートの URL
-          は全アプリ共通。新アプリは一覧に追加するだけで、法務サイトの作り直しは不要です。
+          このサイトは<strong>ストア審査提出用</strong>です。作品の紹介・SNSでの入口は
+          <a href={siteConfig.portfolioUrl}>ポートフォリオHP</a>
+          です。プライバシー・利用規約・サポートの URL
+          は掲載アプリで共通。Web だけの制作物はここには載せません。
         </p>
+      </section>
+
+      <section className={styles.section}>
+        <div className={styles.sectionHead}>
+          <h2>2つの公開サイト</h2>
+          <p>
+            役割を分けています。審査員向けの法務URLと、人向けの作品一覧を混ぜません。
+          </p>
+        </div>
+        <div className={styles.group}>
+          <a className={styles.contactRow} href={siteConfig.portfolioUrl}>
+            <span>
+              <strong>ポートフォリオHP</strong>
+              <span className={styles.contactMeta}>
+                Web制作物・SNSで紹介する入口 · ymd-portfolio-site.pages.dev
+              </span>
+            </span>
+            <span className={styles.chevron} aria-hidden>
+              ›
+            </span>
+          </a>
+          <Link className={styles.contactRow} href="/apps/">
+            <span>
+              <strong>このサイト（ストア法務）</strong>
+              <span className={styles.contactMeta}>
+                App Store / Play / Microsoft Store のポリシーURL
+              </span>
+            </span>
+            <span className={styles.chevron} aria-hidden>
+              ›
+            </span>
+          </Link>
+        </div>
       </section>
 
       <section className={styles.section}>
@@ -60,11 +95,12 @@ export default function HomePage() {
 
       <section className={styles.section}>
         <div className={styles.sectionHead}>
-          <h2>対象アプリ</h2>
+          <h2>ストア申請対象</h2>
           <p>
-            いまは Crossplatform App が1件だけです。追加は{' '}
-            <code>npm run register-app</code> / <code>npm run create-app</code>{' '}
-            で自動反映されます。
+            App Store / Google Play / Microsoft Store でポリシーURLが必要なアプリだけです（
+            {apps.length}件）。Web公開のみの作品は
+            <a href={siteConfig.portfolioUrl}>ポートフォリオ</a>
+            を見てください。
           </p>
         </div>
         <div className={styles.group}>

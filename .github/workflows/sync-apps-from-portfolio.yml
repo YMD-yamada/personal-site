@@ -1,7 +1,7 @@
-# Sync store hub app addenda from portfolio public web apps (agent/CI owned).
-# Does not require the user to run commands.
+# Refresh existing store-hub listings from portfolio (agent/CI owned).
+# Does not add Web-only apps. Does not require the user to run commands.
 
-name: Sync apps from portfolio
+name: Refresh store hub from portfolio
 
 on:
   workflow_dispatch:
@@ -32,5 +32,5 @@ jobs:
           git config user.name "ymd-bot"
           git config user.email "ymd.hude@gmail.com"
           git add src/config/apps.json
-          git commit -m "chore: sync store hub apps from portfolio"
+          git commit -m "chore: refresh store hub copy from portfolio"
           git push

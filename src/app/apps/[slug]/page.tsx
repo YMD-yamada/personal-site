@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { LegalArticle } from '@/components/LegalArticle';
-import { apps, legalUrls, platformLabel, statusLabel } from '@/config/site';
+import { apps, legalUrls, platformLabel, siteConfig, statusLabel } from '@/config/site';
 import { privacyBody } from '@/content/legal';
 import styles from '../../page.module.css';
 
@@ -40,6 +40,11 @@ export default async function AppDetailPage({
           </p>
           <h1 className={styles.pageTitle}>{app.name}</h1>
           <p>{app.summary}</p>
+          <p className={styles.note}>
+            このページはストア審査用です。人向けの紹介は
+            <a href={siteConfig.portfolioUrl}>ポートフォリオHP</a>
+            を見てください。
+          </p>
         </div>
 
         <div className={styles.metaRow}>
@@ -128,7 +133,9 @@ export default async function AppDetailPage({
         </div>
 
         <p className={styles.sectionFoot}>
-          <Link href="/apps/">← アプリ一覧</Link>
+          <Link href="/apps/">← ストア申請対象</Link>
+          {' · '}
+          <a href={siteConfig.portfolioUrl}>ポートフォリオHP</a>
         </p>
       </section>
 

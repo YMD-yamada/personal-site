@@ -11,9 +11,11 @@ export function SiteHeader() {
           {siteConfig.brandName}
         </Link>
         <nav className={styles.nav} aria-label="メイン">
+          <Link href="/apps/">対象アプリ</Link>
           <Link href="/legal/privacy/">プライバシー</Link>
           <Link href="/legal/terms/">利用規約</Link>
           <Link href="/support/">サポート</Link>
+          <a href={siteConfig.portfolioUrl}>作品一覧</a>
         </nav>
       </div>
     </header>
@@ -27,10 +29,11 @@ export function SiteFooter() {
         <div>
           <p className={styles.footerBrand}>{siteConfig.brandName}</p>
           <p className={styles.footerMeta}>
-            © {new Date().getFullYear()} {siteConfig.operatorName} · ストア申請用ページ
+            © {new Date().getFullYear()} {siteConfig.operatorName} · ストア申請用法務
           </p>
         </div>
         <div className={styles.footerLinks}>
+          <a href={siteConfig.portfolioUrl}>ポートフォリオHP</a>
           <Link href="/legal/privacy/">プライバシー</Link>
           <Link href="/legal/terms/">利用規約</Link>
           <Link href="/legal/tokushoho/">特商法</Link>

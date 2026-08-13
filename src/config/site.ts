@@ -1,20 +1,21 @@
 import appsJson from './apps.json';
 
 /**
- * App Store / Google Play 申請用の共通法務ハブ。
- * ポートフォリオ（https://ymd-portfolio-site.pages.dev/）とは別サイト。
+ * App Store / Google Play / Microsoft Store 申請用の共通法務ハブ。
+ * 公開作品の紹介・SNS入口はポートフォリオ（https://ymd-portfolio-site.pages.dev/）。
  *
- * - プライバシー / 利用規約 / サポート URL は全アプリで共通利用
- * - Crossplatform App 専用サイトではない（最初の1件として登録されているだけ）
- * - 新アプリは `npm run register-app` または `npm run create-app` で apps.json に自動追加
+ * - ここに載せるのはストア提出でポリシーURLが必要なアプリだけ
+ * - プライバシー / 利用規約 / サポート URL は全ストアアプリで共通
+ * - Web だけの制作物はポートフォリオへ。登録はエージェントが publish-app-listing
  */
 export const siteConfig = {
   brandName: 'ymd',
-  purpose: 'アプリのプライバシーポリシー・利用規約・サポート窓口',
+  purpose: 'App Store / Google Play / Microsoft Store 申請用のプライバシー・利用規約・サポート',
   operatorName: '山田健登',
   address: '請求があった場合に遅滞なく開示します',
   supportEmail: 'ymd.hude@gmail.com',
   publicBaseUrl: 'https://personal-site-taupe-gamma.vercel.app',
+  portfolioUrl: 'https://ymd-portfolio-site.pages.dev/',
   updatedAt: '2026-08-13',
 } as const;
 

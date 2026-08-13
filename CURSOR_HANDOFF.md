@@ -2,7 +2,8 @@
 
 ## 目的
 
-ストア申請用の全アプリ共通法務ハブ。ポートフォリオ（Web 自由公開）とは別。
+ストア申請用の法務ハブ。**掲載は App Store / Google Play / Microsoft Store 提出アプリのみ。**
+公開作品・SNS入口はポートフォリオ（https://ymd-portfolio-site.pages.dev/）。
 
 ## 自動化（ユーザー操作なし）
 
@@ -10,15 +11,13 @@
 
 ### ストア法務ハブ（このリポ）
 
-- エージェント: `tools/publish-app-listing.mjs` → commit / push / Vercel 本番
-- CI: `.github/workflows/sync-apps-from-portfolio.yml` が portfolio 公開 Web を日次同期
+- エージェント: `tools/publish-app-listing.mjs --store --name --slug --url`
+- CI: 既存ストアアプリの説明だけ portfolio から refresh（Web 作品の自動追加はしない）
 
 ### ポートフォリオ（ymd-portfolio）
 
-- CI: push / 日次で `sync-apps` → Cloudflare Pages（申請不要 Web を自動掲載）
-- エージェント即時: `scripts/publish-app-listing.mjs --name --url`
-- 法務表記: `/legal/privacy|terms|support.html` + 各カードに「プライバシーポリシー準拠」
-- アプリ埋め込み雛形: `/legal/embed-snippet.html` · `docs/WEB_PUBLISH.md`
+- Web 公開: `publish-app-listing.mjs --portfolio-only --name --url`
+- ストアアプリはハブとポートフォリオの両方に載せて呼応
 
 ## 本番
 
@@ -27,3 +26,9 @@
 - 出先Todo（暗号化）: https://personal-site-taupe-gamma.vercel.app/go.html
   - PIN: NAS `33_Tasks/.mobile-board-pin`（git 外）
   - 再公開: `node ../work-ops-hub/scripts/publish-mobile-board.mjs --ship`
+
+## 掲載中（ストア）
+
+- ポイントパレット（iOS/Android・申請準備）
+- Timeboard（Windows / Microsoft Store）
+- Crossplatform App（法務URL検証用スターター）
