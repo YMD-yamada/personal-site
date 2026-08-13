@@ -2,8 +2,11 @@
   {
     "slug": "point-palette",
     "name": "ポイントパレット",
-    "summary": "日本のポイントカード／バーコードをひとつにまとめる家族共有アプリ。オフライン提示・日本語UI。広告なし。App Store / Google Play 申請用。",
-    "platforms": ["ios", "android"],
+    "summary": "日本向けポイントカード管理（Expo）。法務ページ公開済み。ストア準備中。",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "status": "development",
     "dataCollected": [
       "アカウント登録時のメールアドレス（Supabase Auth）",
@@ -14,14 +17,16 @@
       "アクセスログ（Webプレビューのホスティング事業者が処理する場合があります）"
     ],
     "storeUrls": {
-      "web": "https://point-palette-legal.vercel.app/demo"
+      "web": "https://point-palette-legal.vercel.app/privacy"
     }
   },
   {
     "slug": "timeboard",
     "name": "Timeboard",
     "summary": "PC で何に時間を使ったかを見て、使っていないアプリを外す。データはこの PC だけ。Apple Screen Time とは無関係。Microsoft Store 申請用。",
-    "platforms": ["windows"],
+    "platforms": [
+      "windows"
+    ],
     "status": "released",
     "dataCollected": [
       "前面ウィンドウのプロセス名・実行ファイルパス・ウィンドウタイトル（使用時間の計測。端末内のみ。サーバーへ送信しません）",
@@ -38,7 +43,11 @@
     "slug": "crossplatform-app",
     "name": "Crossplatform App",
     "summary": "Android / iOS / Web 向けの共通公開スターター。ストア申請の法務URL検証用テンプレート。一般向け作品一覧には載せません。",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "status": "development",
     "dataCollected": [
       "アカウント登録時のメールアドレス（任意ログイン時）",
