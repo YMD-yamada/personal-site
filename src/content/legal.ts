@@ -40,7 +40,7 @@ ${siteConfig.brandName} および当方が提供するアプリケーション�
 
 法令に基づく場合を除き、本人の同意なく第三者へ提供しません。インフラ・分析・決済・ストア配信のため、次のような処理委託先を利用することがあります。
 
-- Apple / Google（ストア配信・課金）
+- Apple / Google / Microsoft（ストア配信・課金）
 - ホスティング・BaaS・監視・決済事業者（例: Vercel、Supabase、Sentry、Stripe）
 
 ## 4. 保管・安全管理

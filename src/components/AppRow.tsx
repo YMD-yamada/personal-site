@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { AppListing } from '@/config/site';
-import { statusLabel } from '@/config/site';
+import { platformLabel, statusLabel } from '@/config/site';
 import styles from './AppRow.module.css';
 
 export function AppRow({ app }: { app: AppListing }) {
@@ -19,7 +19,9 @@ export function AppRow({ app }: { app: AppListing }) {
           </span>
         </span>
         <span className={styles.summary}>{app.summary}</span>
-        <span className={styles.platforms}>{app.platforms.join(' · ')}</span>
+        <span className={styles.platforms}>
+          {app.platforms.map((p) => platformLabel[p] ?? p).join(' · ')}
+        </span>
       </span>
       <span className={styles.chevron} aria-hidden>
         ›

@@ -15,21 +15,31 @@ export const siteConfig = {
   address: '請求があった場合に遅滞なく開示します',
   supportEmail: 'ymd.hude@gmail.com',
   publicBaseUrl: 'https://personal-site-taupe-gamma.vercel.app',
-  updatedAt: '2026-07-22',
+  updatedAt: '2026-08-13',
 } as const;
+
+export type AppPlatform = 'ios' | 'android' | 'web' | 'windows';
 
 export type AppListing = {
   slug: string;
   name: string;
   summary: string;
-  platforms: Array<'ios' | 'android' | 'web'>;
+  platforms: AppPlatform[];
   status: 'planning' | 'development' | 'released';
   dataCollected: string[];
   storeUrls?: {
     ios?: string;
     android?: string;
     web?: string;
+    windows?: string;
   };
+};
+
+export const platformLabel: Record<AppPlatform, string> = {
+  ios: 'iOS',
+  android: 'Android',
+  web: 'Web',
+  windows: 'Windows',
 };
 
 export const apps = appsJson as AppListing[];

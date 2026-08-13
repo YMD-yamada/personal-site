@@ -27,6 +27,7 @@ const slug = arg('--slug', name);
 const summary = arg('--summary', 'Android / iOS / Web 向けアプリ');
 const status = arg('--status', 'development');
 const url = arg('--url', '');
+const windowsUrl = arg('--windows-url', '');
 const platforms = (arg('--platforms', 'ios,android,web') || '')
   .split(',')
   .map((s) => s.trim())
@@ -62,7 +63,14 @@ if (apps.some((a) => a.slug === slug)) {
       'アカウント登録時のメールアドレス（ログインを有効にした場合）',
       'クラッシュログ・利用状況（分析ツールを有効にした場合）',
     ],
-    ...(url ? { storeUrls: { web: url } } : {}),
+    ...((url || windowsUrl)
+      ? {
+          storeUrls: {
+            ...(url ? { web: url } : {}),
+            ...(windowsUrl ? { windows: windowsUrl } : {}),
+          },
+        }
+      : {}),
   });
   fs.writeFileSync(appsPath, `${JSON.stringify(apps, null, 2)}\n`);
   console.log(`Registered on store hub: ${name} (${slug})`);

@@ -209,5 +209,24 @@
     "storeUrls": {
       "web": "https://kuroshiro-omega.vercel.app"
     }
+  },
+  {
+    "slug": "timeboard",
+    "name": "Timeboard",
+    "summary": "Windows のアプリ使用時間を端末内だけで記録。未使用アプリの削除検討を助けるデジタルウェルビーイング。Apple Screen Time とは無関係。",
+    "platforms": [
+      "windows"
+    ],
+    "status": "released",
+    "dataCollected": [
+      "前面ウィンドウのプロセス名・実行ファイルパス・ウィンドウタイトル（使用時間の計測。端末内のみ。サーバーへ送信しません）",
+      "最後の入力からの経過時間（アイドル判定。端末内のみ）",
+      "インストール済みアプリ一覧（未使用候補の表示。端末内のみ）",
+      "ユーザーが書き出した CSV（ユーザーが保存先を選んだ場合のみ）",
+      "アカウント・広告識別子・解析ツールは使いません"
+    ],
+    "storeUrls": {
+      "web": "https://github.com/YMD-yamada/windows-screentime/releases/latest"
+    }
   }
 ]
