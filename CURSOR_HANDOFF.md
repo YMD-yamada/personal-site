@@ -29,6 +29,6 @@
 
 ## 掲載中（ストア）
 
-- ポイントパレット（iOS/Android・申請準備）
+- ポイントパレット（iOS/Android・申請準備。Web はログインなしで端末内体験）
 - Timeboard（Windows / Microsoft Store）
 - Crossplatform App（法務URL検証用スターター）
