@@ -2,10 +2,11 @@
   {
     "slug": "point-palette",
     "name": "ポイントパレット",
-    "summary": "日本向けポイントカード管理（Expo）。法務ページ公開済み。ストア準備中。",
+    "summary": "家族で共有できる日本向けポイントカード帳。会員番号か写真がないと提示できない。",
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "web"
     ],
     "status": "development",
     "dataCollected": [
@@ -13,11 +14,11 @@
       "表示名",
       "ポイントカード番号・バーコード（世帯内で同期）",
       "カード写真（任意）",
-      "位置情報（任意・近い店舗カードの並び替え用）",
-      "アクセスログ（Webプレビューのホスティング事業者が処理する場合があります）"
+      "位置情報（任意・近い店舗カードの並び替え用・端末内）",
+      "アクセスログ（Web版のホスティング事業者が処理する場合があります）"
     ],
     "storeUrls": {
-      "web": "https://point-palette-legal.vercel.app/privacy"
+      "web": "https://point-palette-web.vercel.app"
     }
   },
   {
