@@ -57,8 +57,8 @@
   },
   {
     "slug": "usageboard",
-    "name": "Usageboard",
-    "summary": "Cursor の Usage（Cursor Models / Other Models）を常駐ウィジェットで可視化。非公式。データはこの PC だけ。Microsoft Store 申請用。",
+    "name": "Usageboard for Cursor",
+    "summary": "Cursor ユーザー専用の非公式ウィジェット。自分の Cursor Models / Other Models を常駐表示。買い切り。紹介アフィリエイトなし。",
     "platforms": [
       "windows"
     ],
