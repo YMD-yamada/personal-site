@@ -53,5 +53,24 @@
       "アカウント登録時のメールアドレス（任意ログイン時）",
       "クラッシュログ・利用状況（分析ツールを有効にした場合）"
     ]
+  },
+  {
+    "slug": "usageboard",
+    "name": "Usageboard",
+    "summary": "Cursor の Usage（Cursor Models / Other Models）を常駐ウィジェットで可視化。非公式。データはこの PC だけ。Microsoft Store 申請用。",
+    "platforms": [
+      "windows"
+    ],
+    "status": "development",
+    "dataCollected": [
+      "Cursor のローカルログインセッション（この PC の state.vscdb。このアプリは保存せず、ダッシュボード API の呼び出しにだけ使います）",
+      "自分の Usage / 課金の数字（Cursor ダッシュボード API。自社サーバーへは送りません）",
+      "この PC のプロセス CPU / メモリ（Cursor の負荷表示。端末内のみ）",
+      "運用設定（従量を使わない等。この PC の設定のみ）",
+      "アカウント登録・広告識別子・解析ツールは使いません"
+    ],
+    "storeUrls": {
+      "web": "https://github.com/YMD-yamada/cursor-usage-monitor"
+    }
   }
 ]
