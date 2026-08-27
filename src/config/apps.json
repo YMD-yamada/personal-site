@@ -2,7 +2,7 @@
   {
     "slug": "point-palette",
     "name": "ポイントパレット",
-    "summary": "日本向けポイントカード帳。番号か写真がないと提示できない。Webはログインなしでこの端末だけ試せる。",
+    "summary": "日本のポイントカード／バーコードをひとつにまとめる家族共有アプリ。オフライン提示・日本語UI。広告なし。",
     "platforms": [
       "ios",
       "android",
@@ -58,7 +58,7 @@
   {
     "slug": "usageboard",
     "name": "Usageboard for Cursor",
-    "summary": "Cursor ユーザー専用の非公式ウィジェット。自分の Cursor Models / Other Models を常駐表示。買い切り。紹介アフィリエイトなし。",
+    "summary": "PC で何に時間を使ったかを見て、使っていないアプリを外す。データはこの PC だけ。Apple Screen Time とは無関係。",
     "platforms": [
       "windows"
     ],
@@ -71,7 +71,7 @@
       "アカウント登録・広告識別子・解析ツールは使いません"
     ],
     "storeUrls": {
-      "web": "https://github.com/YMD-yamada/cursor-usage-monitor/releases/latest"
+      "web": "https://github.com/YMD-yamada/windows-screentime/releases/latest"
     }
   }
 ]
