@@ -58,7 +58,7 @@
   {
     "slug": "usageboard",
     "name": "Usageboard for Cursor",
-    "summary": "Cursor ユーザー専用の非公式ウィジェット。1画面で Cursor Models / Other Models とリセット期限を常駐表示。買い切り。紹介アフィリエイトなし。",
+    "summary": "PC で何に時間を使ったかを見て、使っていないアプリを外す。データはこの PC だけ。Apple Screen Time とは無関係。",
     "platforms": [
       "windows"
     ],
@@ -71,7 +71,7 @@
       "アカウント登録・広告識別子・解析ツールは使いません"
     ],
     "storeUrls": {
-      "web": "https://github.com/YMD-yamada/cursor-usage-monitor/releases/latest"
+      "web": "https://github.com/YMD-yamada/windows-screentime/releases/latest"
     }
   }
 ]
